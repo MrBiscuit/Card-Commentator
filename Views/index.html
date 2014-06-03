@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app lang="en">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.8/angular.min.js"></script>
+	<script type="text/javascript" src="/Scripts/main.js"></script>
+	<script type="text/javascript" src="/Scripts/libs/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/CSS/style.css" />
+	<link rel="stylesheet" type="text/css" href="/Packages/Bootstrap/css/bootstrap.css" />
+</head>
+
+<body ng-controller="CardCtrl">
+	<div id="menuTop" class="menuTopSection">
+		<button type="button" class="btn btn-success" ng-click="addCard()">Add</button>
+		<div class="input-group  search-box">
+			<input type="text" class="form-control" placeholder="Search" ng-model="cardSearch" ng-change="change()">
+			<div class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div id="playField" class="play-field">
+		<div id="leftPlayerHand" class="player-hand">
+		</div>
+		<div id="leftPlayerPlayField" class="player-field">
+		</div>
+		<div id="streamSection" class="stream-section">
+			<object class="stream" type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=reynad27" bgcolor="#000000">
+				<param name="allowFullScreen" value="true" />
+				<param name="allowScriptAccess" value="always" />
+				<param name="allowNetworking" value="all" />
+				<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+				<param name="flashvars" value="hostname=www.twitch.tv&channel=reynad27&auto_play=true&start_volume=25" />
+			</object>
+			<a href="http://www.twitch.tv/reynad27" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline; text-align:center;"></a>
+		</div>
+
+		<div id="rightPlayerPlayField" class="player-field">
+			<div class="card-column">
+				<div class="card-row" ng-repeat="card in cardList">
+					<img class="rotated-card" ng-src="{{card.src}}">
+				</div>
+			</div>
+			<div ng-repeat="test in testCardList">
+				{{test.name}}
+			</div>
+		</div>
+		<div id="rightPlayerHand" class="player-hand">
+			<div class="card-column">
+				<div class="card-row" ng-repeat="card in cardList">
+					<img class="rotated-card" ng-src="{{card.src}}">
+				</div>
+			</div>
+			<div ng-repeat="test in testCardList">
+				{{test.name}}
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="footer">
+		<div class="copy-right">Copyright © CardCommentator.com</div>
+	</div>
+</body>
+
+</html>
