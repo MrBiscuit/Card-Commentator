@@ -1,0 +1,134 @@
+$card-rotation-time: .5s;
+$card-rotation-right: 270deg;
+
+.rotated-card {
+	width: 75px;
+    transform: rotate($card-rotation-right);
+    -ms-transform: rotate($card-rotation-right);
+	/* IE 9 */
+    -webkit-transform: rotate($card-rotation-right);
+	/* Opera, Chrome, and Safari */
+	/* For Safari 3.1 to 6.0 */
+    -webkit-transition: -webkit-transform $card-rotation-time, width $card-rotation-time;
+    transition: transform $card-rotation-time, width $card-rotation-time;
+    position: absolute;
+    margin-left: 2px;
+    margin-top: -10px;
+}
+
+.rotated-card:hover {
+	/* Chrome, Safari, Opera */
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    z-index: 2;
+    width: 250px;
+}
+
+.rotated-card:active {
+}
+
+.card-row {
+    display: block;
+    position: relative;
+    min-height: 120px;
+}
+
+.card-row:first-child {
+}
+
+.card-column {
+    padding: 20px;
+	position: absolute;
+}
+
+.ul-unstyled {
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.search-box {
+    width: 300px;
+}
+
+nav {
+    height: 50px;
+    background-color: black;
+	width: 100%;
+}
+
+.play-field {
+
+  float:left;
+    width:100%;
+}
+
+.player-hand {
+	//background: #B0966B;
+    width: 12.5%;
+	height: 800px;
+		background-image: url("/Images/greenFelt.jpg");
+}
+
+.player-field {
+		background-image: url("/Images/blueFelt.jpg");
+   // background: #546947;
+    width: 12.5%;
+	height: 800px;
+}
+
+.card-section{
+	 
+}
+
+.stream-section {
+    background: #5F748C;
+    overflow: hidden;
+	height: 800px;
+
+}
+
+footer {
+    background-color: black;
+    color: #aaaaaa;
+    clear: both;
+    height: 20px;
+	margin: -20px 0 0 0;
+}
+
+#rightPlayerHand {
+     float:right;
+}
+
+#rightPlayerPlayField {
+     float:right;
+}
+
+#leftPlayerHand {
+    float:left;
+}
+
+#leftPlayerPlayField {
+    float:left;
+	
+}
+
+.stream {
+    width: 100%;
+    height: 517px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.page-wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 0 -20px 0; /* the bottom margin is the negative value of the footer's height */
+    position: relative;
+}
+
+body,
+html {
+    height: 100%;
+	overflow: hidden;
+}
