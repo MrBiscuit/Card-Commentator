@@ -1,198 +1,102 @@
-
 .rotated-card {
-
-	width: 100px;
-
-	transform: rotate(270deg);
-
-	-ms-transform: rotate(270deg);
-
-	/* IE 9 */
-
-	-webkit-transform: rotate(270deg);
-
-	/* Opera, Chrome, and Safari */
-
-	/* For Safari 3.1 to 6.0 */
-
-	-webkit-transition: -webkit-transform .75s, width .75s;
-
-	transition: transform .75s, width .75s;
-
-	position: absolute;
-
-	margin-left: 25px;
-
-	margin-top: -25px;
-
-}
+  width: 75px;
+  transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  /* IE 9 */
+  -webkit-transform: rotate(270deg);
+  /* Opera, Chrome, and Safari */
+  /* For Safari 3.1 to 6.0 */
+  -webkit-transition: -webkit-transform 0.5s, width 0.5s;
+  transition: transform 0.5s, width 0.5s;
+  position: absolute;
+  margin-left: 2px;
+  margin-top: -10px; }
 
 .rotated-card:hover {
+  /* Chrome, Safari, Opera */
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  z-index: 2;
+  width: 250px; }
 
-	/* Chrome, Safari, Opera */
-
-	-webkit-transform: rotate(360deg);
-
-	transform: rotate(360deg);
-
-	z-index: 2;
-
-	width: 250px;
-
-}
 
 .card-row {
+  display: block;
+  position: relative;
+  min-height: 120px; }
 
-	display: block;
 
-	position: relative;
-
-	min-height: 120px;
-
-}
-
-.card-row:first-child {} .card-column {
-
-	padding: 20px;
-
-}
+.card-column {
+  padding: 20px;
+  position: absolute; }
 
 .ul-unstyled {
-
-	list-style: none;
-
-	padding-bottom: 10px;
-
-}
+  list-style: none;
+  padding-bottom: 10px; }
 
 .search-box {
+  width: 300px; }
 
-	width: 300px;
-
-}
-
-.menuTopSection {
-
-	height: 80px;
-
-	background: black;
-
-	text-align: right;
-
-}
-
-.player-hand {
-
-	width: 12.5%;
-
-	background: blue;
-
-	height: 100px;
-
-}
+nav {
+  height: 50px;
+  background-color: black;
+  width: 100%; }
 
 .play-field {
+  float: left;
+  width: 100%; }
 
-	width: 100%;
-
-	display: table;
-
-	min-height: 100%;
-
-	margin-bottom: -20px;
-
-}
+.player-hand {
+  width: 12.5%;
+  height: 800px;
+  background-image: url("/Images/greenFelt.jpg"); }
 
 .player-field {
+  background-image: url("/Images/blueFelt.jpg");
+  width: 12.5%;
+  height: 800px; }
 
-	background: green;
-
-	width: 12.5%;
-
-	height: 100px;
-
-}
 
 .stream-section {
+  background: #5F748C;
+  overflow: hidden;
+  height: 800px; }
 
-	background: red;
-
-	display: table-cell;
-
-}
-
-.footer {
-
-	background-color: black;
-
-	color: #aaaaaa;
-
-	clear: both;
-
-	height: 20px;
-
-}
+footer {
+  background-color: black;
+  color: #aaaaaa;
+  clear: both;
+  height: 20px;
+  margin: -20px 0 0 0; }
 
 #rightPlayerHand {
-
-	display: table-cell;
-
-}
+  float: right; }
 
 #rightPlayerPlayField {
-
-	display: table-cell;
-
-}
+  float: right; }
 
 #leftPlayerHand {
-
-	display: table-cell;
-
-}
+  float: left; }
 
 #leftPlayerPlayField {
-
-	display: table-cell;
-
-}
+  float: left; }
 
 .stream {
+  width: 100%;
+  height: 517px;
+  margin-top: 0px;
+  padding-top: 0px; }
 
-	width: 100%;
+.page-wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 0 -20px 0;
+  /* the bottom margin is the negative value of the footer's height */
+  position: relative; }
 
-	height: 517px;
+body, html {
+  height: 100%;
+  overflow: hidden; }
 
-	margin-top: 0px;
-
-	padding-top: 0px;
-
-}
-
-body,
-
-html {
-
-	height;
-
-	100%;
-
-}
-
-.play-field:after {
-
-	content: "";
-
-	display: block;
-
-}
-
-.footer,
-
-.play-field:after {
-
-	/* .push must be the same height as footer */
-
-	height: 20px;
-
-}
+/*# sourceMappingURL=style.css.map */

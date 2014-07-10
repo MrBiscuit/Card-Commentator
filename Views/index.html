@@ -9,9 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="/Packages/Bootstrap/css/bootstrap.css" />
 </head>
 
-<body ng-controller="CardCtrl">
-	<div id="menuTop" class="menuTopSection">
-		<button type="button" class="btn btn-success" ng-click="addCard()">Add</button>
+<div class="page-wrap">
+	<nav>
+				<button type="button" class="btn btn-success" ng-click="addCard()">Add</button>
+		<!--
 		<div class="input-group  search-box">
 			<input type="text" class="form-control" placeholder="Search" ng-model="cardSearch" ng-change="change()">
 			<div class="input-group-btn">
@@ -19,47 +20,57 @@
 				</button>
 			</div>
 		</div>
-	</div>
-	<div id="playField" class="play-field">
-		<div id="leftPlayerHand" class="player-hand">
-		</div>
-		<div id="leftPlayerPlayField" class="player-field">
-		</div>
-		<div id="streamSection" class="stream-section">
-			<object class="stream" type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=reynad27" bgcolor="#000000">
-				<param name="allowFullScreen" value="true" />
-				<param name="allowScriptAccess" value="always" />
-				<param name="allowNetworking" value="all" />
-				<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
-				<param name="flashvars" value="hostname=www.twitch.tv&channel=reynad27&auto_play=true&start_volume=25" />
-			</object>
-			<a href="http://www.twitch.tv/reynad27" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline; text-align:center;"></a>
-		</div>
+-->
+	</nav>
 
-		<div id="rightPlayerPlayField" class="player-field">
-			<div class="card-column">
-				<div class="card-row" ng-repeat="card in cardList">
-					<img class="rotated-card" ng-src="{{card.src}}">
+	<body ng-controller="CardCtrl" onload="fillthescreen()">
+		<div class="play-field">
+			<div id="rightPlayerPlayField" class="player-field">
+				<div class="card-column">
+					<div class="card-row" ng-repeat="card in cardList">
+						<img class="rotated-card" ng-src="{{card.src}}">
+					</div>
+				</div>
+				<div class="card-column">
+					<div class="card-row" ng-repeat="card in cardList">
+						<img class="rotated-card" ng-src="{{card.src}}">
+					</div>
 				</div>
 			</div>
-			<div ng-repeat="test in testCardList">
-				{{test.name}}
-			</div>
-		</div>
-		<div id="rightPlayerHand" class="player-hand">
-			<div class="card-column">
-				<div class="card-row" ng-repeat="card in cardList">
-					<img class="rotated-card" ng-src="{{card.src}}">
+			<div id="rightPlayerHand" class="player-hand">
+
+				<div class="card-column">
+					<div class="card-row" ng-repeat="card in cardList">
+						<img class="rotated-card" ng-src="{{card.src}}">
+					</div>
 				</div>
+				<div ng-repeat="test in testCardList">
+					{{test.name}}
+				</div>
+
 			</div>
-			<div ng-repeat="test in testCardList">
-				{{test.name}}
+			<div id="leftPlayerPlayField" class="player-field">
+			</div>
+			<div id="leftPlayerHand" class="player-hand">
+			</div>
+
+			<div id="streamSection" class="stream-section">
+
+				<object class="stream" type="application/x-shockwave-flash" height="378" width="620" id="live_embed_player_flash" data="http://www.twitch.tv/widgets/live_embed_player.swf?channel=scglive" bgcolor="#000000">
+					<param name="allowFullScreen" value="true" />
+					<param name="allowScriptAccess" value="always" />
+					<param name="allowNetworking" value="all" />
+					<param name="movie" value="http://www.twitch.tv/widgets/live_embed_player.swf" />
+					<param name="flashvars" value="hostname=www.twitch.tv&channel=scglive&auto_play=true&start_volume=25" />
+				</object>
+				<a href="http://www.twitch.tv/scglive" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px;text-decoration:underline; text-align:center;"></a>
+
 			</div>
 		</div>
-	</div>
-	<div id="footer" class="footer">
-		<div class="copy-right">Copyright © CardCommentator.com</div>
-	</div>
-</body>
+	</body>
+</div>
+<footer>
+	<div class="copy-right">Copyright © cardommentator.com</div>
+</footer>
 
 </html>

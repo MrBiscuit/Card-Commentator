@@ -58,3 +58,32 @@ function CardCtrl($scope) {
 
 
 }
+
+/********************************************************************************************************
+* Temporary fix for filling columns to max height
+********************************************************************************************************/
+//hacky attempt to get middle columns to fill the rest of the screen. http://blog.corunet.com/three-column-layout-with-full-page-height/
+function fillthescreen() {
+	winH = windowHeight(); //This returns the screen heigth
+	heightNeeded = winH - 70; //We need to substract the footer height
+/*	if (typeof (window.innerWidth) != 'number') { //Explorer doesn't recognize minHeight
+		document.getElementById('leftPlayerHand').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug)
+	}*/
+	document.getElementById('leftPlayerHand').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+	document.getElementById('leftPlayerPlayField').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+	document.getElementById('streamSection').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+	document.getElementById('rightPlayerPlayField').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+	document.getElementById('rightPlayerHand').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+}
+
+function windowHeight() {
+	var alto = 0;
+	if (typeof (window.innerWidth) == 'number') {
+		alto = window.innerHeight;
+	} else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+		alto = document.documentElement.clientHeight;
+	} else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+		alto = document.body.clientHeight;
+	}
+	return alto;
+}
