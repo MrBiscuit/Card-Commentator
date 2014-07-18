@@ -1,5 +1,7 @@
+//constants
 $card-rotation-time: .5s;
 $card-rotation-right: 270deg;
+$footer-height: -20px;
 
 .rotated-card {
 	width: 75px;
@@ -16,12 +18,16 @@ $card-rotation-right: 270deg;
     margin-top: -10px;
 }
 
+//.rotated-card:hover {
+//	/* Chrome, Safari, Opera */
+//    -webkit-transform: rotate(360deg);
+//    transform: rotate(360deg);
+//    z-index: 2;
+//    width: 250px;
+//}
+
 .rotated-card:hover {
-	/* Chrome, Safari, Opera */
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-    z-index: 2;
-    width: 250px;
+	outline: 3px solid yellow;
 }
 
 .rotated-card:active {
@@ -57,34 +63,37 @@ nav {
 }
 
 .play-field {
-
-  float:left;
-    width:100%;
+ 	float:left;
+	width:100%;
 }
 
 .player-hand {
-	//background: #B0966B;
     width: 12.5%;
 	height: 800px;
-		background-image: url("/Images/greenFelt.jpg");
+	background-image: url("/Images/greenFelt.jpg");
 }
 
 .player-field {
-		background-image: url("/Images/blueFelt.jpg");
-   // background: #546947;
+	background-image: url("/Images/blueFelt.jpg");
     width: 12.5%;
 	height: 800px;
 }
 
-.card-section{
-	 
+.middle-section {
+    //background: #5F748C;
+    overflow: hidden;
+	height: 100%;
+
 }
 
+#test{
+ 	background: black;
+	margin: 0;
+	padding: 0;
+}
 .stream-section {
-    background: #5F748C;
     overflow: hidden;
-	height: 800px;
-
+	width: 50%;
 }
 
 footer {
@@ -92,7 +101,7 @@ footer {
     color: #aaaaaa;
     clear: both;
     height: 20px;
-	margin: -20px 0 0 0;
+	margin: $footer-height 0 0 0;
 }
 
 #rightPlayerHand {
@@ -109,12 +118,18 @@ footer {
 
 #leftPlayerPlayField {
     float:left;
-	
+}
+
+#selectedCardSection {
+	background: #5F748C;
+
+	height: 100%;
+	bottom: 0;
 }
 
 .stream {
     width: 100%;
-    height: 517px;
+    height: 520px;
     margin-top: 0px;
     padding-top: 0px;
 }
@@ -123,7 +138,7 @@ footer {
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 0 -20px 0; /* the bottom margin is the negative value of the footer's height */
+    margin: 0 0 $footer-height 0; /* the bottom margin is the negative value of the footer's height */
     position: relative;
 }
 

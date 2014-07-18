@@ -1,7 +1,8 @@
 function CardCtrl($scope) {
 
 	var searchBoxTimeout = null;
-
+	
+	$scope.streamName = "twingalaxieslive";
 	$scope.card1 = "http://mtgimage.com/card/Craw Wurm.jpg";
 	$scope.card2 = "http://mtgimage.com/card/Serra_Angel.jpg";
 	$scope.card3 = "http://mtgimage.com/card/Mountain.jpg";
@@ -74,6 +75,7 @@ function fillthescreen() {
 	document.getElementById('streamSection').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
 	document.getElementById('rightPlayerPlayField').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
 	document.getElementById('rightPlayerHand').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
+	document.getElementById('streamSection').style.height = heightNeeded + 'px'; //So, we use height (and explroer bug);
 }
 
 function windowHeight() {
