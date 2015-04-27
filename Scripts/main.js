@@ -25,6 +25,15 @@ function CardCtrl($scope) {
         $scope.cardList = {};
         $scope.cardPopupImage = "";
         $scope.poppedUpCardId = 0;
+    
+        $scope.leftPlayerBoard = {};
+        $scope.leftPlayerHand = {};
+        $scope.leftPlayerGraveyard = {};
+        $scope.leftPlayerExile = {};
+        $scope.rightPlayerBoard = {};
+        $scope.rightPlayerHand = {};
+        $scope.rightPlayerGraveyard = {};
+        $scope.rightPlayerExile = {};
 
         /****************************************************************
         * Derective Functions 
@@ -34,7 +43,7 @@ function CardCtrl($scope) {
         $scope.addCard = function () {
             var uuid = guid();
             
-            $scope.cardList[uuid] = {
+            $scope.rightPlayerBoard[uuid] = {
                 src: "http://media.wizards.com/2015/dftyuvbd564776rvf/en_nwqoyktujb.png",
                 name: "Test1",
                 id: uuid

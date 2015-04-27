@@ -29,6 +29,16 @@ $footer-height: -20px;
   font-weight: bold;
 }
 
+.number-of {
+  background: rgb(252, 252, 252);
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
 .rotated-card-container {
     height: 75px;
     width: 105px;
@@ -39,21 +49,25 @@ $footer-height: -20px;
     outline: 2px solid #2ecc71;
 }
 
-.cardPopup {
+.card-popup {
     visibility: hidden;
     position: absolute;
     
 }
 
-.cardPopupButtonGroup{
+.card-popup-button-group{
   
   top: 100px;
   position: relative;
 }
 
-.cardPopupImage {
+.card-popup-image {
     border-radius: 13px;
     width: 300px;
+}
+
+.card-popup-image-container {
+    display: inline-block;
 }
 
 #leftButtonGroup{
@@ -68,9 +82,15 @@ $footer-height: -20px;
 
 #rightButtonGroup {
      float: right;
+    display: inline-block;
 }
 
-.cardPopupButtonGroup .cardPopupButton {
+#topButtonGroup {
+    float: right;
+    padding-right: 10px;
+}
+
+.card-popup-button-group .card-popup-button{
     display: block;
     margin: 4px;
 }
