@@ -1,5 +1,8 @@
-/* line 5, D:/Projects/Card Commentator/CSS/style.scss */
-.rotated-card {
+/*************************************
+* Card styles
+*************************************/
+/* line 25, D:/Projects/Card Commentator/CSS/style.scss */
+.rotated-card-right {
   top: -15px;
   position: relative;
   left: 15px;
@@ -8,188 +11,289 @@
   -ms-transform: rotate(270deg);
   /* IE 9 */
   -webkit-transform: rotate(270deg);
-  /* Opera, Chrome, and Safari */
-  /* For Safari 3.1 to 6.0 */
+  border-radius: 1px;
   box-shadow: 3px 3px 10px #333333; }
 
-/* line 23, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 29, D:/Projects/Card Commentator/CSS/style.scss */
+.rotated-card-left {
+  top: -15px;
+  position: relative;
+  left: 15px;
+  width: 75px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  border-radius: 1px;
+  box-shadow: 3px 3px 10px #333333; }
+
+/* line 33, D:/Projects/Card Commentator/CSS/style.scss */
+.hover-container {
+  display: hidden; }
+
+/* line 37, D:/Projects/Card Commentator/CSS/style.scss */
+.top {
+  z-index: 2;
+  position: relative; }
+
+/* line 42, D:/Projects/Card Commentator/CSS/style.scss */
+.bottom {
+  z-index: 1;
+  position: relative; }
+
+/* line 47, D:/Projects/Card Commentator/CSS/style.scss */
 .counter {
   background: #fcfcfc;
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 8px;
   border-radius: 5px;
-  font-weight: bold; }
+  font-weight: bold;
+  background-color: #2ecc71;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  padding: 0 3px; }
 
-/* line 32, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 61, D:/Projects/Card Commentator/CSS/style.scss */
 .number-of {
   background: #fcfcfc;
   position: absolute;
-  top: 50%;
-  right: 50%;
+  margin: auto;
+  bottom: 5px;
+  right: 8px;
   border-radius: 5px;
   font-weight: bold;
-  padding: 0 5px; }
+  padding: 0 5px;
+  background-color: #2ecc71;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black; }
 
-/* line 42, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 76, D:/Projects/Card Commentator/CSS/style.scss */
 .rotated-card-container {
   height: 75px;
   width: 105px;
   position: absolute; }
 
-/* line 48, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 82, D:/Projects/Card Commentator/CSS/style.scss */
 .rotated-card:hover {
   outline: 2px solid #2ecc71; }
 
-/* line 52, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 86, D:/Projects/Card Commentator/CSS/style.scss */
 .card-popup {
   visibility: hidden;
-  position: absolute; }
+  position: absolute;
+  z-index: 999; }
 
-/* line 58, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 92, D:/Projects/Card Commentator/CSS/style.scss */
 .card-popup-button-group {
   top: 100px;
   position: relative; }
 
-/* line 64, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 97, D:/Projects/Card Commentator/CSS/style.scss */
 .card-popup-image {
   border-radius: 13px;
   width: 300px; }
 
-/* line 69, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 102, D:/Projects/Card Commentator/CSS/style.scss */
 .card-popup-image-container {
   display: inline-block; }
 
-/* line 73, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 106, D:/Projects/Card Commentator/CSS/style.scss */
+#cardHover {
+  top: 10px;
+  left: 10px; }
+
+/* line 111, D:/Projects/Card Commentator/CSS/style.scss */
 #leftButtonGroup {
   float: left;
   width: 1px; }
 
-/* line 78, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 116, D:/Projects/Card Commentator/CSS/style.scss */
 #leftButtonGroup button {
   margin-bottom: 0px;
   float: right; }
 
-/* line 83, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 121, D:/Projects/Card Commentator/CSS/style.scss */
 #rightButtonGroup {
   float: right;
   display: inline-block; }
 
-/* line 88, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 126, D:/Projects/Card Commentator/CSS/style.scss */
 #topButtonGroup {
   float: right;
   padding-right: 10px; }
 
-/* line 93, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 131, D:/Projects/Card Commentator/CSS/style.scss */
+#bottomButtonGroup {
+  text-align: center; }
+
+/* line 135, D:/Projects/Card Commentator/CSS/style.scss */
+#versionLabel {
+  background-color: white; }
+
+/* line 138, D:/Projects/Card Commentator/CSS/style.scss */
 .card-popup-button-group .card-popup-button {
   display: block;
   margin: 4px; }
 
-/* line 98, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 143, D:/Projects/Card Commentator/CSS/style.scss */
 .card-row {
   display: block;
   position: relative;
   min-height: 120px; }
 
-/* line 105, D:/Projects/Card Commentator/CSS/style.scss */
+/*************************************
+* Play field
+*************************************/
+/* line 152, D:/Projects/Card Commentator/CSS/style.scss */
 .card-column {
   padding: 20px;
   position: absolute; }
 
-/* line 110, D:/Projects/Card Commentator/CSS/style.scss */
-.graveyard {
-  border: 5px solid #2ecc71;
-  width: 125px;
-  height: 95px;
-  position: absolute;
-  bottom: 40px; }
+/* line 157, D:/Projects/Card Commentator/CSS/style.scss */
+.pile-container {
+  width: 100%;
+  position: relative;
+  bottom: -90%; }
 
-/* line 119, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 163, D:/Projects/Card Commentator/CSS/style.scss */
+.card-stack {
+  display: inline-block;
+  background: repeating-linear-gradient(45deg, #2c3e50, #2c3e50 10px, transparent 10px, transparent 20px);
+  width: 125px;
+  height: 90px;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 6px;
+  border-color: #2c3e50;
+  bottom: 15px;
+  position: relative; }
+
+/* line 180, D:/Projects/Card Commentator/CSS/style.scss */
+#leftGraveyard {
+  margin-left: 10%; }
+
+/* line 184, D:/Projects/Card Commentator/CSS/style.scss */
+#rightGraveyard {
+  float: right;
+  margin-right: 10%; }
+
+/* line 189, D:/Projects/Card Commentator/CSS/style.scss */
+#leftExile {
+  float: right;
+  margin-right: 10%; }
+
+/* line 194, D:/Projects/Card Commentator/CSS/style.scss */
+#rightExile {
+  margin-left: 10%; }
+
+/* line 199, D:/Projects/Card Commentator/CSS/style.scss */
 .ul-unstyled {
   list-style: none;
   padding-bottom: 10px; }
 
-/* line 124, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 204, D:/Projects/Card Commentator/CSS/style.scss */
 .search-box {
   width: 300px; }
 
-/* line 128, D:/Projects/Card Commentator/CSS/style.scss */
-nav {
-  height: 50px;
-  background-color: #2c3e50;
-  width: 100%; }
-
-/* line 134, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 208, D:/Projects/Card Commentator/CSS/style.scss */
 .play-field {
-  float: left;
   width: 100%; }
 
-/* line 140, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 212, D:/Projects/Card Commentator/CSS/style.scss */
 .player-hand {
   width: 12.5%;
   height: 800px;
   background-image: url("/Images/greenFelt.jpg"); }
 
-/* line 146, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 218, D:/Projects/Card Commentator/CSS/style.scss */
 .player-field {
   background-image: url("/Images/cardboard.jpg");
   width: 25%;
   height: 800px; }
 
-/* line 152, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 224, D:/Projects/Card Commentator/CSS/style.scss */
 .middle-section {
   overflow: hidden;
   height: 100%; }
 
-/* line 158, D:/Projects/Card Commentator/CSS/style.scss */
-#test {
-  background: black;
-  margin: 0;
-  padding: 0; }
-
-/* line 164, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 230, D:/Projects/Card Commentator/CSS/style.scss */
 .stream-section {
   overflow: hidden;
   width: 50%; }
 
-/* line 169, D:/Projects/Card Commentator/CSS/style.scss */
-footer {
-  background-color: #2c3e50;
-  color: #aaaaaa;
-  clear: both;
-  height: 20px;
-  margin: -20px 0 0 0; }
-
-/* line 177, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 235, D:/Projects/Card Commentator/CSS/style.scss */
 #rightPlayerHand {
   float: right; }
 
-/* line 181, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 239, D:/Projects/Card Commentator/CSS/style.scss */
 #rightPlayerPlayField {
   float: right; }
 
-/* line 185, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 243, D:/Projects/Card Commentator/CSS/style.scss */
 #leftPlayerHand {
   float: left; }
 
-/* line 189, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 247, D:/Projects/Card Commentator/CSS/style.scss */
 #leftPlayerPlayField {
   float: left; }
 
-/* line 193, D:/Projects/Card Commentator/CSS/style.scss */
-#selectedCardSection {
+/* line 251, D:/Projects/Card Commentator/CSS/style.scss */
+.commentator-chat {
   background: #5F748C;
-  height: 100%;
+  height: 40%;
   bottom: 0; }
 
-/* line 199, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 257, D:/Projects/Card Commentator/CSS/style.scss */
+.comments-list {
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow-y: scroll;
+  max-height: 90%;
+  min-height: 90%;
+  margin: 0px;
+  padding: 0px;
+  background: white; }
+
+/* line 270, D:/Projects/Card Commentator/CSS/style.scss */
+.comments-list li {
+  width: 100%;
+  background-color: white;
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-bottom: 1px;
+  border-color: black;
+  border-style: solid;
+  padding: 5px 10px; }
+
+/* line 283, D:/Projects/Card Commentator/CSS/style.scss */
+#textarea {
+  -moz-appearance: textfield-multiline;
+  -webkit-appearance: textarea;
+  border: 1px solid gray;
+  font: medium -moz-fixed;
+  font: -webkit-small-control;
+  height: 28px;
+  overflow: auto;
+  padding: 2px;
+  width: 400px;
+  background-color: white;
+  display: inline-block; }
+
+/* line 300, D:/Projects/Card Commentator/CSS/style.scss */
 .stream {
   width: 100%;
-  height: 570px;
+  height: 60%;
   margin-top: 0px;
-  padding-top: 0px; }
+  padding-top: 0px;
+  display: block; }
 
-/* line 206, D:/Projects/Card Commentator/CSS/style.scss */
+/* line 308, D:/Projects/Card Commentator/CSS/style.scss */
 .page-wrap {
   min-height: 100%;
   height: auto !important;
@@ -198,7 +302,28 @@ footer {
   /* the bottom margin is the negative value of the footer's height */
   position: relative; }
 
-/* line 217, D:/Projects/Card Commentator/CSS/style.scss */
+/*************************************
+* Nav Section
+*************************************/
+/* line 329, D:/Projects/Card Commentator/CSS/style.scss */
+.topbar {
+  height: 50px;
+  background-color: #2c3e50;
+  width: 100%;
+  vertical-align: middle;
+  display: table; }
+
+/* line 337, D:/Projects/Card Commentator/CSS/style.scss */
+.nav-container {
+  display: table-cell;
+  vertical-align: middle; }
+
+/* line 342, D:/Projects/Card Commentator/CSS/style.scss */
+.search-section {
+  float: right;
+  margin-right: 2%; }
+
+/* line 348, D:/Projects/Card Commentator/CSS/style.scss */
 body, html {
   height: 100%;
   overflow: hidden; }

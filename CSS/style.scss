@@ -1,42 +1,76 @@
 //constants
 $card-rotation-right: 270deg;
+$card-rotation-left: 90deg;
 $footer-height: -20px;
+$card-pile-margin: 10%;
+$card-stack-color: #2c3e50;
+/*************************************
+* Card styles
+*************************************/
 
-.rotated-card {
+@mixin rotated-card($radius) {
     top: -15px;
     position: relative;
     left: 15px;
     width: 75px;
-    transform: rotate($card-rotation-right);
-    -ms-transform: rotate($card-rotation-right);
+    transform: rotate($radius);
+    -ms-transform: rotate($radius);
     /* IE 9 */
     
-    -webkit-transform: rotate($card-rotation-right);
-    /* Opera, Chrome, and Safari */
-    /* For Safari 3.1 to 6.0 */
-    
-
+    -webkit-transform: rotate($radius);
+    border-radius: 1px;
     box-shadow: 3px 3px 10px #333333;
-    
+}
+
+.rotated-card-right {
+    @include rotated-card(270deg);
+}
+
+.rotated-card-left {
+    @include rotated-card(90deg);
+}
+
+.hover-container {
+    display: hidden;
+}
+
+.top {
+    z-index: 2;
+    position: relative
+}
+
+.bottom {
+    z-index: 1;
+    position: relative
 }
 
 .counter {
-  background: rgb(252, 252, 252);
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  border-radius: 5px;
-  font-weight: bold;
+    background: rgb(252, 252, 252);
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #2ecc71;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding: 0 3px;
 }
 
 .number-of {
-  background: rgb(252, 252, 252);
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  border-radius: 5px;
-  font-weight: bold;
-  padding: 0 5px;
+    background: rgb(252, 252, 252);
+    position: absolute;
+    margin: auto;
+    bottom: 5px;
+    right: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 0 5px;
+    background-color: #2ecc71;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
 }
 
 .rotated-card-container {
@@ -52,13 +86,12 @@ $footer-height: -20px;
 .card-popup {
     visibility: hidden;
     position: absolute;
-    
+    z-index: 999;
 }
 
-.card-popup-button-group{
-  
-  top: 100px;
-  position: relative;
+.card-popup-button-group {
+    top: 100px;
+    position: relative;
 }
 
 .card-popup-image {
@@ -70,18 +103,23 @@ $footer-height: -20px;
     display: inline-block;
 }
 
-#leftButtonGroup{
+#cardHover {
+    top: 10px;
+    left: 10px;
+}
+
+#leftButtonGroup {
     float: left;
     width: 1px;
 }
 
-#leftButtonGroup button{
+#leftButtonGroup button {
     margin-bottom: 0px;
     float: right;
 }
 
 #rightButtonGroup {
-     float: right;
+    float: right;
     display: inline-block;
 }
 
@@ -90,7 +128,14 @@ $footer-height: -20px;
     padding-right: 10px;
 }
 
-.card-popup-button-group .card-popup-button{
+#bottomButtonGroup {
+    text-align: center;
+    
+}
+#versionLabel {
+    background-color: white;
+}
+.card-popup-button-group .card-popup-button {
     display: block;
     margin: 4px;
 }
@@ -100,21 +145,56 @@ $footer-height: -20px;
     position: relative;
     min-height: 120px;
 }
-
+/*************************************
+* Play field
+*************************************/
 
 .card-column {
     padding: 20px;
     position: absolute;
 }
 
-.graveyard {
-    border: 5px solid #2ecc71;
-    width: 125px;
-    height: 95px;
-    position: absolute;
-    bottom: 40px;
-
+.pile-container{
+    width: 100%; 
+    position: relative;
+    bottom: -90%;
 }
+
+.card-stack {
+    display: inline-block;
+    background: repeating-linear-gradient( 45deg, $card-stack-color, $card-stack-color 10px, rgba(0, 0, 0, 0) 10px, rgba(0, 0, 0, 0) 20px);
+    width: 125px;
+    height: 90px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 6px;
+    border-color: $card-stack-color;
+     bottom: 15px;
+    position: relative;
+}
+
+.graveyard {
+    
+}
+
+#leftGraveyard {
+    margin-left: $card-pile-margin;
+}
+
+#rightGraveyard {
+    float: right;
+    margin-right: $card-pile-margin;
+}
+
+#leftExile {
+     float: right;
+    margin-right: $card-pile-margin;
+}
+
+#rightExile {
+   margin-left: $card-pile-margin;
+}
+
 
 .ul-unstyled {
     list-style: none;
@@ -125,16 +205,8 @@ $footer-height: -20px;
     width: 300px;
 }
 
-nav {
-    height: 50px;
-    background-color: #2c3e50;
-    width: 100%;
-}
-
 .play-field {
-    float: left;
     width: 100%;
-  
 }
 
 .player-hand {
@@ -155,23 +227,9 @@ nav {
     height: 100%;
 }
 
-#test {
-    background: black;
-    margin: 0;
-    padding: 0;
-}
-
 .stream-section {
     overflow: hidden;
     width: 50%;
-}
-
-footer {
-    background-color: #2c3e50;
-    color: #aaaaaa;
-    clear: both;
-    height: 20px;
-    margin: $footer-height 0 0 0;
 }
 
 #rightPlayerHand {
@@ -190,17 +248,61 @@ footer {
     float: left;
 }
 
-#selectedCardSection {
+.commentator-chat {
     background: #5F748C;
-    height: 100%;
+    height: 40%;
     bottom: 0;
+}
+
+.comments-list {
+    width: 100%;
+     list-style-type: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    overflow-y: scroll;
+    max-height: 90%;
+    min-height: 90%;
+    margin: 0px;
+    padding: 0px;
+     background: white;
+}
+
+.comments-list li {
+    width: 100%;
+    background-color: white;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px;
+  border-color: black;
+  border-style: solid;
+    padding: 5px 10px;
+   
+}
+
+#textarea {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 28px;
+    overflow: auto;
+    padding: 2px;
+    width: 400px;
+      background-color: white;
+    display: inline-block;
+}
+
+#chatSend{
 }
 
 .stream {
     width: 100%;
-    height: 570px;
+    height: 60%;
     margin-top: 0px;
     padding-top: 0px;
+    display: block;
 }
 
 .page-wrap {
@@ -211,6 +313,35 @@ footer {
     /* the bottom margin is the negative value of the footer's height */
     
     position: relative;
+}
+/*************************************
+* Nav Section
+*************************************/
+
+nav .input-group {
+    // display: inline-block;
+}
+
+nav button {
+    //display: inline-block;
+}
+
+.topbar {
+    height: 50px;
+    background-color: #2c3e50;
+    width: 100%;
+    vertical-align: middle;
+    display: table;
+}
+
+.nav-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.search-section {
+    float: right;
+    margin-right: 2%;
 }
 
 body,
